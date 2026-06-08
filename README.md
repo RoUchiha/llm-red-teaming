@@ -2,6 +2,24 @@
 
 > An automated safety evaluation framework that systematically probes LLM endpoints with adversarial attack templates, classifies responses using a dual-layer approach (keyword heuristics + LLM judge), and generates a risk report scored by category, technique, and severity.
 
+## Academic Background
+
+This project was built as a capstone application of concepts from the **[UT Austin AI & Machine Learning](https://onlineexeced.mccombs.utexas.edu/online-ai-machine-learning-course)** program (McCombs School of Business, 23-week executive program).
+
+Specific modules applied:
+
+| Module | Concept Applied |
+|--------|----------------|
+| **Course 03 — Generative AI for NLP** | Responsible AI implementation — the course covers LLM failure modes and the importance of safety evaluation before deployment; this project builds the tooling to do that systematically |
+| **Course 03 — Generative AI for NLP** | LLM API usage — every probe and the classifier are LLM calls structured using the API patterns taught in the course |
+| **Course 04 — Agentic AI for Automation** | Automated multi-step workflows — the runner loops over templates, calls the target model, pipes the response to the classifier, and aggregates into a report, mirroring the agentic automation patterns from Course 04 |
+| **Course 04 — Agentic AI for Automation** | Tool-integrated reasoning — the dual-layer classifier (heuristic tool + LLM judge) is a direct application of the tool-use and reasoning patterns taught for building agentic systems |
+| **Pre-Work — Generative AI Landscape** | Understanding the current state of LLM safety, alignment, and the adversarial threat landscape |
+
+The course's **responsible AI module** in Course 03 raised the question: how do you actually *verify* that a model behaves safely before shipping it? This project is the practical answer — the same methodology used by AI safety teams at major labs, rebuilt from first principles using tools taught throughout the program.
+
+---
+
 > **Ethics note:** All attack templates in this repository are low-severity research probes. No CBRN, CSAM, or genuinely harmful content is generated. This tool exists to make AI systems *safer* by finding weaknesses before adversaries do.
 
 ---
